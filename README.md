@@ -1,7 +1,7 @@
 # Optical Clinic Patients Record System
 This project was made, when I was a college student.
 
-## Feautures
+## Features
 It's all about optical clinic patients record: 
 -Add Patient 
 -Insert Patient Rx 
