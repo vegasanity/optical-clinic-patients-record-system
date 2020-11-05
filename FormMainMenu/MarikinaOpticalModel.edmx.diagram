@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="14a760c6348943aea2c023617b35b668" Name="Diagram1" ZoomLevel="85" ShowGrid="false">
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblContactLens" Width="1.5" PointX="8" PointY="6.75" />
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblContactLensRemarks" Width="1.5" PointX="5.75" PointY="11.125" />
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblOpticalLens" Width="1.5" PointX="3" PointY="1.875" />
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblOpticalLensRemarks" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblPatients" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblPatientsContactLens" Width="1.5" PointX="10.25" PointY="8.875" />
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblPatientsOpticalLens" Width="1.5" PointX="5.25" PointY="3.625" />
+        <AssociationConnector Association="MarikinaOpticalModel.FK_tblContactLens_tblContactLensRemarks" />
+        <AssociationConnector Association="MarikinaOpticalModel.FK_tblPatientsContactLens_tblContactLens" />
+        <AssociationConnector Association="MarikinaOpticalModel.FK_tblOpticalLens_tblOpticalLensRemarks" />
+        <AssociationConnector Association="MarikinaOpticalModel.FK_tblPatientsOpticalLens_tblOpticalLens" />
+        <AssociationConnector Association="MarikinaOpticalModel.FK_tblPatientsContactLens_tblPatients" />
+        <AssociationConnector Association="MarikinaOpticalModel.FK_tblPatientsOpticalLens_tblPatients" />
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblContactLensDoctor" Width="1.5" PointX="5.75" PointY="8" />
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblOpticalLensDoctor" Width="1.5" PointX="0.75" PointY="3.625" />
+        <AssociationConnector Association="MarikinaOpticalModel.FK_tblContactLens_tblContactLensDoctors" />
+        <AssociationConnector Association="MarikinaOpticalModel.FK_tblOpticalLens_tblOpticalLensDoctors" />
+        <EntityTypeShape EntityType="MarikinaOpticalModel.tblUserAccount" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

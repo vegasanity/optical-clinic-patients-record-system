@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36F72C1B-3DB7-4E18-91C2-F30600BF5D71}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FormMainMenu</RootNamespace>
+    <AssemblyName>FormMainMenu</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\Position.cs" />
+    <Compile Include="FormAdminMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminMainMenu.Designer.cs">
+      <DependentUpon>FormAdminMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAdminUserAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAdminUserAccounts.Designer.cs">
+      <DependentUpon>FormAdminUserAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditContactLens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditContactLens.Designer.cs">
+      <DependentUpon>FormEditContactLens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditOpticalLens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditOpticalLens.Designer.cs">
+      <DependentUpon>FormEditOpticalLens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainMenu.Designer.cs">
+      <DependentUpon>FormMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormBackupDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBackupDatabase.Designer.cs">
+      <DependentUpon>FormBackupDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormInformation.Designer.cs">
+      <DependentUpon>FormInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormListOfPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormListOfPatients.Designer.cs">
+      <DependentUpon>FormListOfPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPatient.Designer.cs">
+      <DependentUpon>FormPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPatientRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPatientRecords.Designer.cs">
+      <DependentUpon>FormPatientRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRestoreDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRestoreDatabase.Designer.cs">
+      <DependentUpon>FormRestoreDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRx.Designer.cs">
+      <DependentUpon>FormRx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormStaffChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormStaffChangePassword.Designer.cs">
+      <DependentUpon>FormStaffChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetAccount_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAccount_Result1.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAccount_Result2.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAccount_Result3.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPatientContactLens_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPatientOpticalLens_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPatientsIdResult.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPatientsResult.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPatients_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetUserAccounts_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetUsernamePassword_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MarikinaOpticalModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarikinaOpticalModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MarikinaOpticalModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MarikinaOpticalModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarikinaOpticalModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchDatePatient_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchFullNamePatient_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchIdPatient_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchNameRx_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchSerialNoRx_Result.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContactLens.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContactLensDoctor.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContactLensRemarks.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOpticalLens.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOpticalLensDoctor.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOpticalLensRemarks.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPatients.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPatientsContactLens.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPatientsOpticalLens.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserAccount.cs">
+      <DependentUpon>MarikinaOpticalModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormAdminMainMenu.resx">
+      <DependentUpon>FormAdminMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAdminUserAccounts.resx">
+      <DependentUpon>FormAdminUserAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditContactLens.resx">
+      <DependentUpon>FormEditContactLens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditOpticalLens.resx">
+      <DependentUpon>FormEditOpticalLens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMainMenu.resx">
+      <DependentUpon>FormMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormBackupDatabase.resx">
+      <DependentUpon>FormBackupDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormInformation.resx">
+      <DependentUpon>FormInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormListOfPatients.resx">
+      <DependentUpon>FormListOfPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPatient.resx">
+      <DependentUpon>FormPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPatientRecords.resx">
+      <DependentUpon>FormPatientRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRestoreDatabase.resx">
+      <DependentUpon>FormRestoreDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRx.resx">
+      <DependentUpon>FormRx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormStaffChangePassword.resx">
+      <DependentUpon>FormStaffChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="MarikinaOpticalModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MarikinaOpticalModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MarikinaOpticalModel.edmx.diagram">
+      <DependentUpon>MarikinaOpticalModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconPatientRecord32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconInformation32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconInformation232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconPatientRecord232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconListOfPatients32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconDatabase32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMarikinaOpticalClinic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MarikinaOpticalModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarikinaOpticalModel.edmx</DependentUpon>
+      <LastGenOutput>MarikinaOpticalModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MarikinaOpticalModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarikinaOpticalModel.edmx</DependentUpon>
+      <LastGenOutput>MarikinaOpticalModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\iconUserAccounts32.png" />
+    <None Include="Resources\ABCOpticalClinic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MarikinaOpticalModelStoreContainer" CdmEntityContainer="MarikinaOpticalEntities">
+    <FunctionImportMapping FunctionImportName="GetPatients" FunctionName="MarikinaOpticalModel.Store.GetPatients">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.GetPatients_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Serial_No_" ColumnName="Serial No." />
+          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Mobile_No_" ColumnName="Mobile No." />
+          <ScalarProperty Name="Telephone_No_" ColumnName="Telephone No." />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="HouseNo" ColumnName="HouseNo" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Barangay" ColumnName="Barangay" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertPatient" FunctionName="MarikinaOpticalModel.Store.InsertPatient" />
+    <FunctionImportMapping FunctionImportName="InsertPatientsContactLens" FunctionName="MarikinaOpticalModel.Store.InsertPatientsContactLens" />
+    <FunctionImportMapping FunctionImportName="InsertPatientsOpticalLens" FunctionName="MarikinaOpticalModel.Store.InsertPatientsOpticalLens" />
+    <FunctionImportMapping FunctionImportName="GetPatientsId" FunctionName="MarikinaOpticalModel.Store.GetPatientsId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.GetPatientsIdResult">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Serial_No_" ColumnName="Serial No." />
+          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSerialNumber" FunctionName="MarikinaOpticalModel.Store.GetSerialNumber" />
+    <FunctionImportMapping FunctionImportName="SearchNameRx" FunctionName="MarikinaOpticalModel.Store.SearchNameRx">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.SearchNameRx_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Serial_No_" ColumnName="Serial No." />
+          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchSerialNoRx" FunctionName="MarikinaOpticalModel.Store.SearchSerialNoRx">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.SearchSerialNoRx_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Serial_No_" ColumnName="Serial No." />
+          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSerialNumberContactRx" FunctionName="MarikinaOpticalModel.Store.GetSerialNumberContactRx" />
+    <FunctionImportMapping FunctionImportName="GetSerialNumberOpticalRx" FunctionName="MarikinaOpticalModel.Store.GetSerialNumberOpticalRx" />
+    <EntitySetMapping Name="tblContactLens1">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblContactLens">
+        <MappingFragment StoreEntitySet="tblContactLens">
+          <ScalarProperty Name="ContactLensDoctorId" ColumnName="ContactLensDoctorId" />
+          <ScalarProperty Name="ContactLensRemarksId" ColumnName="ContactLensRemarksId" />
+          <ScalarProperty Name="ContactDate" ColumnName="ContactDate" />
+          <ScalarProperty Name="ContactLDptr" ColumnName="ContactLDptr" />
+          <ScalarProperty Name="ContactLBC" ColumnName="ContactLBC" />
+          <ScalarProperty Name="ContactLA" ColumnName="ContactLA" />
+          <ScalarProperty Name="ContactLC" ColumnName="ContactLC" />
+          <ScalarProperty Name="ContactLS" ColumnName="ContactLS" />
+          <ScalarProperty Name="ContactRDptr" ColumnName="ContactRDptr" />
+          <ScalarProperty Name="ContactRBC" ColumnName="ContactRBC" />
+          <ScalarProperty Name="ContactRA" ColumnName="ContactRA" />
+          <ScalarProperty Name="ContactRC" ColumnName="ContactRC" />
+          <ScalarProperty Name="ContactRS" ColumnName="ContactRS" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblContactLensRemarks1">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblContactLensRemarks">
+        <MappingFragment StoreEntitySet="tblContactLensRemarks">
+          <ScalarProperty Name="ContactLensRemarks" ColumnName="ContactLensRemarks" />
+          <ScalarProperty Name="ContactLensSerialNumber" ColumnName="ContactLensSerialNumber" />
+          <ScalarProperty Name="ContactLensRemarksId" ColumnName="ContactLensRemarksId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOpticalLens1">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblOpticalLens">
+        <MappingFragment StoreEntitySet="tblOpticalLens">
+          <ScalarProperty Name="OpticalLensDoctorId" ColumnName="OpticalLensDoctorId" />
+          <ScalarProperty Name="OpticalLensRemarksId" ColumnName="OpticalLensRemarksId" />
+          <ScalarProperty Name="OpticalDate" ColumnName="OpticalDate" />
+          <ScalarProperty Name="OpticalLOH" ColumnName="OpticalLOH" />
+          <ScalarProperty Name="OpticalLBase" ColumnName="OpticalLBase" />
+          <ScalarProperty Name="OpticalLPrism" ColumnName="OpticalLPrism" />
+          <ScalarProperty Name="OpticalLAdd" ColumnName="OpticalLAdd" />
+          <ScalarProperty Name="OpticalLPD" ColumnName="OpticalLPD" />
+          <ScalarProperty Name="OpticalLA" ColumnName="OpticalLA" />
+          <ScalarProperty Name="OpticalLC" ColumnName="OpticalLC" />
+          <ScalarProperty Name="OpticalLS" ColumnName="OpticalLS" />
+          <ScalarProperty Name="OpticalROH" ColumnName="OpticalROH" />
+          <ScalarProperty Name="OpticalRBase" ColumnName="OpticalRBase" />
+          <ScalarProperty Name="OpticalRPrism" ColumnName="OpticalRPrism" />
+          <ScalarProperty Name="OpticalRAdd" ColumnName="OpticalRAdd" />
+          <ScalarProperty Name="OpticalRPD" ColumnName="OpticalRPD" />
+          <ScalarProperty Name="OpticalRA" ColumnName="OpticalRA" />
+          <ScalarProperty Name="OpticalRC" ColumnName="OpticalRC" />
+          <ScalarProperty Name="OpticalRS" ColumnName="OpticalRS" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="OpticalId" ColumnName="OpticalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOpticalLensRemarks1">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblOpticalLensRemarks">
+        <MappingFragment StoreEntitySet="tblOpticalLensRemarks">
+          <ScalarProperty Name="OpticalLensRemarks" ColumnName="OpticalLensRemarks" />
+          <ScalarProperty Name="OpticalLensSerialNumber" ColumnName="OpticalLensSerialNumber" />
+          <ScalarProperty Name="OpticalLensRemarksId" ColumnName="OpticalLensRemarksId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPatients1">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblPatients">
+        <MappingFragment StoreEntitySet="tblPatients">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PatientDate" ColumnName="PatientDate" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Barangay" ColumnName="Barangay" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="HouseNo" ColumnName="HouseNo" />
+          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPatientsContactLens1">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblPatientsContactLens">
+        <MappingFragment StoreEntitySet="tblPatientsContactLens">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="PatientContactId" ColumnName="PatientContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPatientsOpticalLens1">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblPatientsOpticalLens">
+        <MappingFragment StoreEntitySet="tblPatientsOpticalLens">
+          <ScalarProperty Name="OpticalId" ColumnName="OpticalId" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="PatientOpticalId" ColumnName="PatientOpticalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="InsertContactLensRemarks" FunctionName="MarikinaOpticalModel.Store.InsertContactLensRemarks" />
+    <FunctionImportMapping FunctionImportName="InsertOpticalLensRemarks" FunctionName="MarikinaOpticalModel.Store.InsertOpticalLensRemarks" />
+    <FunctionImportMapping FunctionImportName="InsertContactLens" FunctionName="MarikinaOpticalModel.Store.InsertContactLens" />
+    <FunctionImportMapping FunctionImportName="InsertOpticalLens" FunctionName="MarikinaOpticalModel.Store.InsertOpticalLens" />
+    <FunctionImportMapping FunctionImportName="SearchDatePatient" FunctionName="MarikinaOpticalModel.Store.SearchDatePatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.SearchDatePatient_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Serial_No_" ColumnName="Serial No." />
+          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Mobile_No_" ColumnName="Mobile No." />
+          <ScalarProperty Name="Telephone_No_" ColumnName="Telephone No." />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="HouseNo" ColumnName="HouseNo" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Barangay" ColumnName="Barangay" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchFullNamePatient" FunctionName="MarikinaOpticalModel.Store.SearchFullNamePatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.SearchFullNamePatient_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Serial_No_" ColumnName="Serial No." />
+          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Mobile_No_" ColumnName="Mobile No." />
+          <ScalarProperty Name="Telephone_No_" ColumnName="Telephone No." />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="HouseNo" ColumnName="HouseNo" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Barangay" ColumnName="Barangay" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchIdPatient" FunctionName="MarikinaOpticalModel.Store.SearchIdPatient">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.SearchIdPatient_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Serial_No_" ColumnName="Serial No." />
+          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Mobile_No_" ColumnName="Mobile No." />
+          <ScalarProperty Name="Telephone_No_" ColumnName="Telephone No." />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="HouseNo" ColumnName="HouseNo" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Barangay" ColumnName="Barangay" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RemovePatientInformation" FunctionName="MarikinaOpticalModel.Store.RemovePatientInformation" />
+    <FunctionImportMapping FunctionImportName="UpdatePatientInformation" FunctionName="MarikinaOpticalModel.Store.UpdatePatientInformation" />
+    <FunctionImportMapping FunctionImportName="InsertContactLensDoctors" FunctionName="MarikinaOpticalModel.Store.InsertContactLensDoctors" />
+    <FunctionImportMapping FunctionImportName="InsertOpticalLensDoctors" FunctionName="MarikinaOpticalModel.Store.InsertOpticalLensDoctors" />
+    <EntitySetMapping Name="tblContactLensDoctors">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblContactLensDoctor">
+        <MappingFragment StoreEntitySet="tblContactLensDoctors">
+          <ScalarProperty Name="ContactLensOptician" ColumnName="ContactLensOptician" />
+          <ScalarProperty Name="ContactLensOptometrist" ColumnName="ContactLensOptometrist" />
+          <ScalarProperty Name="ContactLensSerialNumber" ColumnName="ContactLensSerialNumber" />
+          <ScalarProperty Name="ContactLensDoctorId" ColumnName="ContactLensDoctorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOpticalLensDoctors">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblOpticalLensDoctor">
+        <MappingFragment StoreEntitySet="tblOpticalLensDoctors">
+          <ScalarProperty Name="OpticalLensOptician" ColumnName="OpticalLensOptician" />
+          <ScalarProperty Name="OpticalLensOptometrist" ColumnName="OpticalLensOptometrist" />
+          <ScalarProperty Name="OpticalLensSerialNumber" ColumnName="OpticalLensSerialNumber" />
+          <ScalarProperty Name="OpticalLensDoctorId" ColumnName="OpticalLensDoctorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CountPatientContactLens" FunctionName="MarikinaOpticalModel.Store.CountPatientContactLens" />
+    <FunctionImportMapping FunctionImportName="CountPatientOpticalLens" FunctionName="MarikinaOpticalModel.Store.CountPatientOpticalLens" />
+    <FunctionImportMapping FunctionImportName="GetLastCheckUpDateOpticalLens" FunctionName="MarikinaOpticalModel.Store.GetLastCheckUpDateOpticalLens" />
+    <FunctionImportMapping FunctionImportName="GetLastCheckUpDateContactLens" FunctionName="MarikinaOpticalModel.Store.GetLastCheckUpDateContactLens" />
+    <FunctionImportMapping FunctionImportName="GetPatientOpticalLens" FunctionName="MarikinaOpticalModel.Store.GetPatientOpticalLens">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.GetPatientOpticalLens_Result">
+          <ScalarProperty Name="OpticalDate" ColumnName="OpticalDate" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="OpticalRS" ColumnName="OpticalRS" />
+          <ScalarProperty Name="OpticalRC" ColumnName="OpticalRC" />
+          <ScalarProperty Name="OpticalRA" ColumnName="OpticalRA" />
+          <ScalarProperty Name="OpticalRPD" ColumnName="OpticalRPD" />
+          <ScalarProperty Name="OpticalRAdd" ColumnName="OpticalRAdd" />
+          <ScalarProperty Name="OpticalRPrism" ColumnName="OpticalRPrism" />
+          <ScalarProperty Name="OpticalRBase" ColumnName="OpticalRBase" />
+          <ScalarProperty Name="OpticalROH" ColumnName="OpticalROH" />
+          <ScalarProperty Name="OpticalLS" ColumnName="OpticalLS" />
+          <ScalarProperty Name="OpticalLC" ColumnName="OpticalLC" />
+          <ScalarProperty Name="OpticalLA" ColumnName="OpticalLA" />
+          <ScalarProperty Name="OpticalLPD" ColumnName="OpticalLPD" />
+          <ScalarProperty Name="OpticalLAdd" ColumnName="OpticalLAdd" />
+          <ScalarProperty Name="OpticalLPrism" ColumnName="OpticalLPrism" />
+          <ScalarProperty Name="OpticalLBase" ColumnName="OpticalLBase" />
+          <ScalarProperty Name="OpticalLOH" ColumnName="OpticalLOH" />
+          <ScalarProperty Name="OpticalLensRemarks" ColumnName="OpticalLensRemarks" />
+          <ScalarProperty Name="OpticalLensOptometrist" ColumnName="OpticalLensOptometrist" />
+          <ScalarProperty Name="OpticalLensOptician" ColumnName="OpticalLensOptician" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="OLSerialNumber" ColumnName="OLSerialNumber" />
+          <ScalarProperty Name="PSerialNumber" ColumnName="PSerialNumber" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPatientContactLens" FunctionName="MarikinaOpticalModel.Store.GetPatientContactLens">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.GetPatientContactLens_Result">
+          <ScalarProperty Name="ContactDate" ColumnName="ContactDate" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="ContactRS" ColumnName="ContactRS" />
+          <ScalarProperty Name="ContactRC" ColumnName="ContactRC" />
+          <ScalarProperty Name="ContactRA" ColumnName="ContactRA" />
+          <ScalarProperty Name="ContactRBC" ColumnName="ContactRBC" />
+          <ScalarProperty Name="ContactRDptr" ColumnName="ContactRDptr" />
+          <ScalarProperty Name="ContactLS" ColumnName="ContactLS" />
+          <ScalarProperty Name="ContactLC" ColumnName="ContactLC" />
+          <ScalarProperty Name="ContactLA" ColumnName="ContactLA" />
+          <ScalarProperty Name="ContactLBC" ColumnName="ContactLBC" />
+          <ScalarProperty Name="ContactLDptr" ColumnName="ContactLDptr" />
+          <ScalarProperty Name="ContactLensRemarks" ColumnName="ContactLensRemarks" />
+          <ScalarProperty Name="ContactLensOptometrist" ColumnName="ContactLensOptometrist" />
+          <ScalarProperty Name="ContactLensOptician" ColumnName="ContactLensOptician" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="CLSerialNumber" ColumnName="CLSerialNumber" />
+          <ScalarProperty Name="PSerialNumber" ColumnName="PSerialNumber" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdatePatientOpticalLens" FunctionName="MarikinaOpticalModel.Store.UpdatePatientOpticalLens" />
+    <FunctionImportMapping FunctionImportName="UpdatePatientDoctors" FunctionName="MarikinaOpticalModel.Store.UpdatePatientDoctors" />
+    <FunctionImportMapping FunctionImportName="UpatePatientRemarks" FunctionName="MarikinaOpticalModel.Store.UpatePatientRemarks" />
+    <FunctionImportMapping FunctionImportName="UpdatePatientContactLens" FunctionName="MarikinaOpticalModel.Store.UpdatePatientContactLens" />
+    <FunctionImportMapping FunctionImportName="UpdatePatientCLDoctors" FunctionName="MarikinaOpticalModel.Store.UpdatePatientCLDoctors" />
+    <FunctionImportMapping FunctionImportName="UpdatePatientsCLRemakrs" FunctionName="MarikinaOpticalModel.Store.UpdatePatientsCLRemakrs" />
+    <FunctionImportMapping FunctionImportName="BackUpDatabase" FunctionName="MarikinaOpticalModel.Store.BackUpDatabase" />
+    <EntitySetMapping Name="tblUserAccounts">
+      <EntityTypeMapping TypeName="MarikinaOpticalModel.tblUserAccount">
+        <MappingFragment StoreEntitySet="tblUserAccounts">
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="InsertUserAccounts" FunctionName="MarikinaOpticalModel.Store.InsertUserAccounts" />
+    <FunctionImportMapping FunctionImportName="GetAccountsUsername" FunctionName="MarikinaOpticalModel.Store.GetAccountsUsername" />
+    <FunctionImportMapping FunctionImportName="GetUserAccounts" FunctionName="MarikinaOpticalModel.Store.GetUserAccounts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.GetUserAccounts_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAccount" FunctionName="MarikinaOpticalModel.Store.GetAccount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.GetAccount_Result">
+          <ScalarProperty Name="Position" ColumnName="Position" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateUserAccount" FunctionName="MarikinaOpticalModel.Store.UpdateUserAccount" />
+    <FunctionImportMapping FunctionImportName="BlockUserAccount" FunctionName="MarikinaOpticalModel.Store.BlockUserAccount" />
+    <FunctionImportMapping FunctionImportName="GetUserOldPassword" FunctionName="MarikinaOpticalModel.Store.GetUserOldPassword" />
+    <FunctionImportMapping FunctionImportName="UpdateUserPassword" FunctionName="MarikinaOpticalModel.Store.UpdateUserPassword" />
+    <FunctionImportMapping FunctionImportName="GetUsernamePassword" FunctionName="MarikinaOpticalModel.Store.GetUsernamePassword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MarikinaOpticalModel.GetUsernamePassword_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTotalPatients" FunctionName="MarikinaOpticalModel.Store.GetTotalPatients" />
+    <FunctionImportMapping FunctionImportName="GetTodayPatients" FunctionName="MarikinaOpticalModel.Store.GetTodayPatients" />
+  </EntityContainerMapping>
+</Mapping>

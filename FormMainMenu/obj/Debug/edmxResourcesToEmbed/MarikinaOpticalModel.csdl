@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MarikinaOpticalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MarikinaOpticalEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetPatients" ReturnType="Collection(MarikinaOpticalModel.GetPatients_Result)" />
+    <FunctionImport Name="InsertPatient">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="MiddleName" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="Byte" />
+      <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+      <Parameter Name="Age" Mode="In" Type="Byte" />
+      <Parameter Name="MobileNumber" Mode="In" Type="String" />
+      <Parameter Name="TelephoneNumber" Mode="In" Type="String" />
+      <Parameter Name="HouseNo" Mode="In" Type="String" />
+      <Parameter Name="Street" Mode="In" Type="String" />
+      <Parameter Name="Barangay" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="PatientDate" Mode="In" Type="DateTime" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="InsertPatientsContactLens">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+      <Parameter Name="GetPatientId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InsertPatientsOpticalLens">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+      <Parameter Name="GetPatientId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetPatientsId" ReturnType="Collection(MarikinaOpticalModel.GetPatientsIdResult)" />
+    <FunctionImport Name="GetSerialNumber" ReturnType="Collection(String)">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SearchNameRx" ReturnType="Collection(MarikinaOpticalModel.SearchNameRx_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SearchSerialNoRx" ReturnType="Collection(MarikinaOpticalModel.SearchSerialNoRx_Result)">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetSerialNumberContactRx" ReturnType="Collection(String)">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetSerialNumberOpticalRx" ReturnType="Collection(String)">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tblContactLens1" EntityType="MarikinaOpticalModel.tblContactLens" />
+    <EntitySet Name="tblContactLensRemarks1" EntityType="MarikinaOpticalModel.tblContactLensRemarks" />
+    <EntitySet Name="tblOpticalLens1" EntityType="MarikinaOpticalModel.tblOpticalLens" />
+    <EntitySet Name="tblOpticalLensRemarks1" EntityType="MarikinaOpticalModel.tblOpticalLensRemarks" />
+    <EntitySet Name="tblPatients1" EntityType="MarikinaOpticalModel.tblPatients" />
+    <EntitySet Name="tblPatientsContactLens1" EntityType="MarikinaOpticalModel.tblPatientsContactLens" />
+    <EntitySet Name="tblPatientsOpticalLens1" EntityType="MarikinaOpticalModel.tblPatientsOpticalLens" />
+    <AssociationSet Name="FK_tblContactLens_tblContactLensRemarks" Association="MarikinaOpticalModel.FK_tblContactLens_tblContactLensRemarks">
+      <End Role="tblContactLensRemark" EntitySet="tblContactLensRemarks1" />
+      <End Role="tblContactLen" EntitySet="tblContactLens1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPatientsContactLens_tblContactLens" Association="MarikinaOpticalModel.FK_tblPatientsContactLens_tblContactLens">
+      <End Role="tblContactLen" EntitySet="tblContactLens1" />
+      <End Role="tblPatientsContactLen" EntitySet="tblPatientsContactLens1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOpticalLens_tblOpticalLensRemarks" Association="MarikinaOpticalModel.FK_tblOpticalLens_tblOpticalLensRemarks">
+      <End Role="tblOpticalLensRemark" EntitySet="tblOpticalLensRemarks1" />
+      <End Role="tblOpticalLen" EntitySet="tblOpticalLens1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPatientsOpticalLens_tblOpticalLens" Association="MarikinaOpticalModel.FK_tblPatientsOpticalLens_tblOpticalLens">
+      <End Role="tblOpticalLen" EntitySet="tblOpticalLens1" />
+      <End Role="tblPatientsOpticalLen" EntitySet="tblPatientsOpticalLens1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPatientsContactLens_tblPatients" Association="MarikinaOpticalModel.FK_tblPatientsContactLens_tblPatients">
+      <End Role="tblPatient" EntitySet="tblPatients1" />
+      <End Role="tblPatientsContactLen" EntitySet="tblPatientsContactLens1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPatientsOpticalLens_tblPatients" Association="MarikinaOpticalModel.FK_tblPatientsOpticalLens_tblPatients">
+      <End Role="tblPatient" EntitySet="tblPatients1" />
+      <End Role="tblPatientsOpticalLen" EntitySet="tblPatientsOpticalLens1" />
+    </AssociationSet>
+    <FunctionImport Name="InsertContactLensRemarks">
+      <Parameter Name="ContactLensSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="ContactLensRemarks" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOpticalLensRemarks">
+      <Parameter Name="OpticalLensSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="OpticalLensRemarks" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertContactLens">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+      <Parameter Name="ContactRS" Mode="In" Type="String" />
+      <Parameter Name="ContactRC" Mode="In" Type="String" />
+      <Parameter Name="ContactRA" Mode="In" Type="String" />
+      <Parameter Name="ContactRBC" Mode="In" Type="String" />
+      <Parameter Name="ContactRDptr" Mode="In" Type="String" />
+      <Parameter Name="ContactLS" Mode="In" Type="String" />
+      <Parameter Name="ContactLC" Mode="In" Type="String" />
+      <Parameter Name="ContactLA" Mode="In" Type="String" />
+      <Parameter Name="ContactLBC" Mode="In" Type="String" />
+      <Parameter Name="ContactLDptr" Mode="In" Type="String" />
+      <Parameter Name="ContactDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOpticalLens">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+      <Parameter Name="OpticalRS" Mode="In" Type="String" />
+      <Parameter Name="OpticalRC" Mode="In" Type="String" />
+      <Parameter Name="OpticalRA" Mode="In" Type="String" />
+      <Parameter Name="OpticalRPD" Mode="In" Type="String" />
+      <Parameter Name="OpticalRAdd" Mode="In" Type="String" />
+      <Parameter Name="OpticalRPrism" Mode="In" Type="String" />
+      <Parameter Name="OpticalRBase" Mode="In" Type="String" />
+      <Parameter Name="OpticalROH" Mode="In" Type="String" />
+      <Parameter Name="OpticalLS" Mode="In" Type="String" />
+      <Parameter Name="OpticalLC" Mode="In" Type="String" />
+      <Parameter Name="OpticalLA" Mode="In" Type="String" />
+      <Parameter Name="OpticalLPD" Mode="In" Type="String" />
+      <Parameter Name="OpticalLAdd" Mode="In" Type="String" />
+      <Parameter Name="OpticalLPrism" Mode="In" Type="String" />
+      <Parameter Name="OpticalLBase" Mode="In" Type="String" />
+      <Parameter Name="OpticalLOH" Mode="In" Type="String" />
+      <Parameter Name="OpticalDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SearchDatePatient" ReturnType="Collection(MarikinaOpticalModel.SearchDatePatient_Result)">
+      <Parameter Name="Date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SearchFullNamePatient" ReturnType="Collection(MarikinaOpticalModel.SearchFullNamePatient_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SearchIdPatient" ReturnType="Collection(MarikinaOpticalModel.SearchIdPatient_Result)">
+      <Parameter Name="PatientId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RemovePatientInformation">
+      <Parameter Name="PatientId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdatePatientInformation">
+      <Parameter Name="PatientID" Mode="In" Type="Int32" />
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="MiddleName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="Byte" />
+      <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+      <Parameter Name="Age" Mode="In" Type="Byte" />
+      <Parameter Name="MobileNumber" Mode="In" Type="String" />
+      <Parameter Name="TelephoneNumber" Mode="In" Type="String" />
+      <Parameter Name="HouseNo" Mode="In" Type="String" />
+      <Parameter Name="Street" Mode="In" Type="String" />
+      <Parameter Name="Barangay" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertContactLensDoctors">
+      <Parameter Name="ContactLensSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="ContactLensOptometrist" Mode="In" Type="String" />
+      <Parameter Name="ContactLensOptician" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOpticalLensDoctors">
+      <Parameter Name="OpticalLensSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="OpticalLensOptometrist" Mode="In" Type="String" />
+      <Parameter Name="OpticalLensOptician" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tblContactLensDoctors" EntityType="MarikinaOpticalModel.tblContactLensDoctor" />
+    <EntitySet Name="tblOpticalLensDoctors" EntityType="MarikinaOpticalModel.tblOpticalLensDoctor" />
+    <AssociationSet Name="FK_tblContactLens_tblContactLensDoctors" Association="MarikinaOpticalModel.FK_tblContactLens_tblContactLensDoctors">
+      <End Role="tblContactLensDoctor" EntitySet="tblContactLensDoctors" />
+      <End Role="tblContactLens" EntitySet="tblContactLens1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOpticalLens_tblOpticalLensDoctors" Association="MarikinaOpticalModel.FK_tblOpticalLens_tblOpticalLensDoctors">
+      <End Role="tblOpticalLensDoctor" EntitySet="tblOpticalLensDoctors" />
+      <End Role="tblOpticalLens" EntitySet="tblOpticalLens1" />
+    </AssociationSet>
+    <FunctionImport Name="CountPatientContactLens" ReturnType="Collection(Int32)">
+      <Parameter Name="PatientId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CountPatientOpticalLens" ReturnType="Collection(Int32)">
+      <Parameter Name="PatientId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetLastCheckUpDateOpticalLens" ReturnType="Collection(DateTime)">
+      <Parameter Name="PatientId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetLastCheckUpDateContactLens" ReturnType="Collection(DateTime)">
+      <Parameter Name="PatientId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetPatientOpticalLens" ReturnType="Collection(MarikinaOpticalModel.GetPatientOpticalLens_Result)">
+      <Parameter Name="PatientId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetPatientContactLens" ReturnType="Collection(MarikinaOpticalModel.GetPatientContactLens_Result)">
+      <Parameter Name="PatientId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdatePatientOpticalLens">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+      <Parameter Name="OpticalRS" Mode="In" Type="String" />
+      <Parameter Name="OpticalRC" Mode="In" Type="String" />
+      <Parameter Name="OpticalRA" Mode="In" Type="String" />
+      <Parameter Name="OpticalRPD" Mode="In" Type="String" />
+      <Parameter Name="OpticalRAdd" Mode="In" Type="String" />
+      <Parameter Name="OpticalRPrism" Mode="In" Type="String" />
+      <Parameter Name="OpticalRBase" Mode="In" Type="String" />
+      <Parameter Name="OpticalROH" Mode="In" Type="String" />
+      <Parameter Name="OpticalLS" Mode="In" Type="String" />
+      <Parameter Name="OpticalLC" Mode="In" Type="String" />
+      <Parameter Name="OpticalLA" Mode="In" Type="String" />
+      <Parameter Name="OpticalLPD" Mode="In" Type="String" />
+      <Parameter Name="OpticalLAdd" Mode="In" Type="String" />
+      <Parameter Name="OpticalLPrism" Mode="In" Type="String" />
+      <Parameter Name="OpticalLBase" Mode="In" Type="String" />
+      <Parameter Name="OpticalLOH" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdatePatientDoctors">
+      <Parameter Name="OpticalLensSerailNumber" Mode="In" Type="String" />
+      <Parameter Name="OpticalLensOptometrist" Mode="In" Type="String" />
+      <Parameter Name="OpticalLensOptician" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpatePatientRemarks">
+      <Parameter Name="OpticalLensSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="OpticalLensRemarks" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdatePatientContactLens">
+      <Parameter Name="SerialNumber" Mode="In" Type="String" />
+      <Parameter Name="ContactRS" Mode="In" Type="String" />
+      <Parameter Name="ContactRC" Mode="In" Type="String" />
+      <Parameter Name="ContactRA" Mode="In" Type="String" />
+      <Parameter Name="ContactRBC" Mode="In" Type="String" />
+      <Parameter Name="ContactRDptr" Mode="In" Type="String" />
+      <Parameter Name="ContactLS" Mode="In" Type="String" />
+      <Parameter Name="ContactLC" Mode="In" Type="String" />
+      <Parameter Name="ContactLA" Mode="In" Type="String" />
+      <Parameter Name="ContactLBC" Mode="In" Type="String" />
+      <Parameter Name="ContactLDptr" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdatePatientCLDoctors">
+      <Parameter Name="ContactLensSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="ContactLensOptometrist" Mode="In" Type="String" />
+      <Parameter Name="ContactLensOptician" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdatePatientsCLRemakrs">
+      <Parameter Name="ContactLensSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="ContactLensRemarks" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="BackUpDatabase">
+      <Parameter Name="DatabaseName" Mode="In" Type="String" />
+      <Parameter Name="FileName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tblUserAccounts" EntityType="MarikinaOpticalModel.tblUserAccount" />
+    <FunctionImport Name="InsertUserAccounts">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="Byte" />
+      <Parameter Name="Position" Mode="In" Type="Byte" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="GetAccountsUsername" ReturnType="Collection(String)">
+      <Parameter Name="Username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserAccounts" ReturnType="Collection(MarikinaOpticalModel.GetUserAccounts_Result)" />
+    <FunctionImport Name="GetAccount" ReturnType="Collection(MarikinaOpticalModel.GetAccount_Result)">
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateUserAccount">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="Byte" />
+      <Parameter Name="Position" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="BlockUserAccount">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="IsActive" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserOldPassword" ReturnType="Collection(String)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateUserPassword">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetUsernamePassword" ReturnType="Collection(MarikinaOpticalModel.GetUsernamePassword_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetTotalPatients" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetTodayPatients" ReturnType="Collection(Int32)">
+      <Parameter Name="Date" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetPatientsIdResult">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Serial_No_" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="513" />
+  </ComplexType>
+  <ComplexType Name="SearchNameRx_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Serial_No_" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="513" />
+  </ComplexType>
+  <ComplexType Name="SearchSerialNoRx_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Serial_No_" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="513" />
+  </ComplexType>
+  <EntityType Name="tblContactLens">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SerialNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ContactRS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactRC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactRA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactRBC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactRDptr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactLS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactLC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactLA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactLBC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactLDptr" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ContactDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ContactLensRemarksId" Type="Int32" />
+    <NavigationProperty Name="tblContactLensRemark" Relationship="MarikinaOpticalModel.FK_tblContactLens_tblContactLensRemarks" FromRole="tblContactLen" ToRole="tblContactLensRemark" />
+    <NavigationProperty Name="tblPatientsContactLens" Relationship="MarikinaOpticalModel.FK_tblPatientsContactLens_tblContactLens" FromRole="tblContactLen" ToRole="tblPatientsContactLen" />
+    <Property Name="ContactLensDoctorId" Type="Int32" />
+    <NavigationProperty Name="tblContactLensDoctor" Relationship="MarikinaOpticalModel.FK_tblContactLens_tblContactLensDoctors" FromRole="tblContactLens" ToRole="tblContactLensDoctor" />
+  </EntityType>
+  <EntityType Name="tblContactLensRemarks">
+    <Key>
+      <PropertyRef Name="ContactLensRemarksId" />
+    </Key>
+    <Property Name="ContactLensRemarksId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContactLensSerialNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ContactLensRemarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblContactLens" Relationship="MarikinaOpticalModel.FK_tblContactLens_tblContactLensRemarks" FromRole="tblContactLensRemark" ToRole="tblContactLen" />
+  </EntityType>
+  <EntityType Name="tblOpticalLens">
+    <Key>
+      <PropertyRef Name="OpticalId" />
+    </Key>
+    <Property Name="OpticalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SerialNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalRS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalRC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalRA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalRPD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalRAdd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalRPrism" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalRBase" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalROH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLPD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLAdd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLPrism" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLBase" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLOH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpticalLensRemarksId" Type="Int32" />
+    <NavigationProperty Name="tblOpticalLensRemark" Relationship="MarikinaOpticalModel.FK_tblOpticalLens_tblOpticalLensRemarks" FromRole="tblOpticalLen" ToRole="tblOpticalLensRemark" />
+    <NavigationProperty Name="tblPatientsOpticalLens" Relationship="MarikinaOpticalModel.FK_tblPatientsOpticalLens_tblOpticalLens" FromRole="tblOpticalLen" ToRole="tblPatientsOpticalLen" />
+    <Property Name="OpticalLensDoctorId" Type="Int32" />
+    <NavigationProperty Name="tblOpticalLensDoctor" Relationship="MarikinaOpticalModel.FK_tblOpticalLens_tblOpticalLensDoctors" FromRole="tblOpticalLens" ToRole="tblOpticalLensDoctor" />
+  </EntityType>
+  <EntityType Name="tblOpticalLensRemarks">
+    <Key>
+      <PropertyRef Name="OpticalLensRemarksId" />
+    </Key>
+    <Property Name="OpticalLensRemarksId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OpticalLensSerialNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLensRemarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblOpticalLens" Relationship="MarikinaOpticalModel.FK_tblOpticalLens_tblOpticalLensRemarks" FromRole="tblOpticalLensRemark" ToRole="tblOpticalLen" />
+  </EntityType>
+  <EntityType Name="tblPatients">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SerialNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="Byte" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Age" Type="Byte" Nullable="false" />
+    <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TelephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HouseNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Street" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Barangay" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PatientDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Byte" />
+    <NavigationProperty Name="tblPatientsContactLens" Relationship="MarikinaOpticalModel.FK_tblPatientsContactLens_tblPatients" FromRole="tblPatient" ToRole="tblPatientsContactLen" />
+    <NavigationProperty Name="tblPatientsOpticalLens" Relationship="MarikinaOpticalModel.FK_tblPatientsOpticalLens_tblPatients" FromRole="tblPatient" ToRole="tblPatientsOpticalLen" />
+  </EntityType>
+  <EntityType Name="tblPatientsContactLens">
+    <Key>
+      <PropertyRef Name="PatientContactId" />
+    </Key>
+    <Property Name="PatientContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientId" Type="Int32" Nullable="false" />
+    <Property Name="ContactId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblContactLen" Relationship="MarikinaOpticalModel.FK_tblPatientsContactLens_tblContactLens" FromRole="tblPatientsContactLen" ToRole="tblContactLen" />
+    <NavigationProperty Name="tblPatient" Relationship="MarikinaOpticalModel.FK_tblPatientsContactLens_tblPatients" FromRole="tblPatientsContactLen" ToRole="tblPatient" />
+  </EntityType>
+  <EntityType Name="tblPatientsOpticalLens">
+    <Key>
+      <PropertyRef Name="PatientOpticalId" />
+    </Key>
+    <Property Name="PatientOpticalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientId" Type="Int32" Nullable="false" />
+    <Property Name="OpticalId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblOpticalLen" Relationship="MarikinaOpticalModel.FK_tblPatientsOpticalLens_tblOpticalLens" FromRole="tblPatientsOpticalLen" ToRole="tblOpticalLen" />
+    <NavigationProperty Name="tblPatient" Relationship="MarikinaOpticalModel.FK_tblPatientsOpticalLens_tblPatients" FromRole="tblPatientsOpticalLen" ToRole="tblPatient" />
+  </EntityType>
+  <Association Name="FK_tblContactLens_tblContactLensRemarks">
+    <End Type="MarikinaOpticalModel.tblContactLensRemarks" Role="tblContactLensRemark" Multiplicity="0..1" />
+    <End Type="MarikinaOpticalModel.tblContactLens" Role="tblContactLen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContactLensRemark">
+        <PropertyRef Name="ContactLensRemarksId" />
+      </Principal>
+      <Dependent Role="tblContactLen">
+        <PropertyRef Name="ContactLensRemarksId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPatientsContactLens_tblContactLens">
+    <End Type="MarikinaOpticalModel.tblContactLens" Role="tblContactLen" Multiplicity="1" />
+    <End Type="MarikinaOpticalModel.tblPatientsContactLens" Role="tblPatientsContactLen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContactLen">
+        <PropertyRef Name="ContactId" />
+      </Principal>
+      <Dependent Role="tblPatientsContactLen">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOpticalLens_tblOpticalLensRemarks">
+    <End Type="MarikinaOpticalModel.tblOpticalLensRemarks" Role="tblOpticalLensRemark" Multiplicity="0..1" />
+    <End Type="MarikinaOpticalModel.tblOpticalLens" Role="tblOpticalLen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOpticalLensRemark">
+        <PropertyRef Name="OpticalLensRemarksId" />
+      </Principal>
+      <Dependent Role="tblOpticalLen">
+        <PropertyRef Name="OpticalLensRemarksId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPatientsOpticalLens_tblOpticalLens">
+    <End Type="MarikinaOpticalModel.tblOpticalLens" Role="tblOpticalLen" Multiplicity="1" />
+    <End Type="MarikinaOpticalModel.tblPatientsOpticalLens" Role="tblPatientsOpticalLen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOpticalLen">
+        <PropertyRef Name="OpticalId" />
+      </Principal>
+      <Dependent Role="tblPatientsOpticalLen">
+        <PropertyRef Name="OpticalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPatientsContactLens_tblPatients">
+    <End Type="MarikinaOpticalModel.tblPatients" Role="tblPatient" Multiplicity="1" />
+    <End Type="MarikinaOpticalModel.tblPatientsContactLens" Role="tblPatientsContactLen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatient">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="tblPatientsContactLen">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPatientsOpticalLens_tblPatients">
+    <End Type="MarikinaOpticalModel.tblPatients" Role="tblPatient" Multiplicity="1" />
+    <End Type="MarikinaOpticalModel.tblPatientsOpticalLens" Role="tblPatientsOpticalLen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatient">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="tblPatientsOpticalLen">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SearchDatePatient_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Serial_No_" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="513" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="Birthday" Nullable="false" />
+    <Property Type="Byte" Name="Age" Nullable="false" />
+    <Property Type="String" Name="Mobile_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="1023" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="MiddleName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="HouseNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Barangay" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="SearchFullNamePatient_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Serial_No_" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="513" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="Birthday" Nullable="false" />
+    <Property Type="Byte" Name="Age" Nullable="false" />
+    <Property Type="String" Name="Mobile_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="1023" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="MiddleName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="HouseNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Barangay" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="SearchIdPatient_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Serial_No_" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="513" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="Birthday" Nullable="false" />
+    <Property Type="Byte" Name="Age" Nullable="false" />
+    <Property Type="String" Name="Mobile_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="1023" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="MiddleName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="HouseNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Barangay" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="GetPatientsResult">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Serial_No_" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="513" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="Birthday" Nullable="false" />
+    <Property Type="Byte" Name="Age" Nullable="false" />
+    <Property Type="String" Name="Mobile_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="1023" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="MiddleName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="HouseNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Barangay" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <EntityType Name="tblContactLensDoctor">
+    <Key>
+      <PropertyRef Name="ContactLensDoctorId" />
+    </Key>
+    <Property Name="ContactLensDoctorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContactLensSerialNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ContactLensOptometrist" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ContactLensOptician" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblContactLens" Relationship="MarikinaOpticalModel.FK_tblContactLens_tblContactLensDoctors" FromRole="tblContactLensDoctor" ToRole="tblContactLens" />
+  </EntityType>
+  <EntityType Name="tblOpticalLensDoctor">
+    <Key>
+      <PropertyRef Name="OpticalLensDoctorId" />
+    </Key>
+    <Property Name="OpticalLensDoctorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OpticalLensSerialNumber" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLensOptometrist" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OpticalLensOptician" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblOpticalLens" Relationship="MarikinaOpticalModel.FK_tblOpticalLens_tblOpticalLensDoctors" FromRole="tblOpticalLensDoctor" ToRole="tblOpticalLens" />
+  </EntityType>
+  <Association Name="FK_tblContactLens_tblContactLensDoctors">
+    <End Type="MarikinaOpticalModel.tblContactLensDoctor" Role="tblContactLensDoctor" Multiplicity="0..1" />
+    <End Type="MarikinaOpticalModel.tblContactLens" Role="tblContactLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContactLensDoctor">
+        <PropertyRef Name="ContactLensDoctorId" />
+      </Principal>
+      <Dependent Role="tblContactLens">
+        <PropertyRef Name="ContactLensDoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOpticalLens_tblOpticalLensDoctors">
+    <End Type="MarikinaOpticalModel.tblOpticalLensDoctor" Role="tblOpticalLensDoctor" Multiplicity="0..1" />
+    <End Type="MarikinaOpticalModel.tblOpticalLens" Role="tblOpticalLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOpticalLensDoctor">
+        <PropertyRef Name="OpticalLensDoctorId" />
+      </Principal>
+      <Dependent Role="tblOpticalLens">
+        <PropertyRef Name="OpticalLensDoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetPatientOpticalLens_Result">
+    <Property Type="DateTime" Name="OpticalDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="SerialNumber" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="OpticalRS" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalRC" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalRA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalRPD" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalRAdd" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalRPrism" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalRBase" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalROH" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalLS" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalLC" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalLA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalLPD" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalLAdd" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalLPrism" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalLBase" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalLOH" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="OpticalLensRemarks" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="OpticalLensOptometrist" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="OpticalLensOptician" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="PatientId" Nullable="false" />
+    <Property Type="String" Name="OLSerialNumber" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="PSerialNumber" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="513" />
+  </ComplexType>
+  <ComplexType Name="GetPatientContactLens_Result">
+    <Property Type="DateTime" Name="ContactDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="SerialNumber" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ContactRS" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactRC" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactRA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactRBC" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactRDptr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactLS" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactLC" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactLA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactLBC" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactLDptr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ContactLensRemarks" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ContactLensOptometrist" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ContactLensOptician" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="PatientId" Nullable="false" />
+    <Property Type="String" Name="CLSerialNumber" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="PSerialNumber" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="513" />
+  </ComplexType>
+  <EntityType Name="tblUserAccount">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="Byte" Nullable="false" />
+    <Property Name="Position" Type="Byte" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isActive" Type="Byte" />
+  </EntityType>
+  <ComplexType Name="GetUserAccounts_Result">
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Position" Nullable="false" MaxLength="5" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetAccount_Result">
+    <Property Type="Byte" Name="Position" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetAccount_Result1">
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="255" />
+    <Property Type="Byte" Name="Position" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetAccount_Result2">
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="255" />
+    <Property Type="Byte" Name="Position" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetAccount_Result3">
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="255" />
+    <Property Type="Byte" Name="Position" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetUsernamePassword_Result">
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="GetPatients_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Serial_No_" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="513" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="Birthday" Nullable="false" />
+    <Property Type="Byte" Name="Age" Nullable="false" />
+    <Property Type="String" Name="Mobile_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telephone_No_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="1023" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="MiddleName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="HouseNo" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Barangay" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="255" />
+  </ComplexType>
+</Schema>

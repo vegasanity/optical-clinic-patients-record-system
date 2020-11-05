@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MarikinaOpticalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblContactLens">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SerialNumber" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ContactRS" Type="varchar" MaxLength="10" />
+    <Property Name="ContactRC" Type="varchar" MaxLength="10" />
+    <Property Name="ContactRA" Type="varchar" MaxLength="10" />
+    <Property Name="ContactRBC" Type="varchar" MaxLength="10" />
+    <Property Name="ContactRDptr" Type="varchar" MaxLength="10" />
+    <Property Name="ContactLS" Type="varchar" MaxLength="10" />
+    <Property Name="ContactLC" Type="varchar" MaxLength="10" />
+    <Property Name="ContactLA" Type="varchar" MaxLength="10" />
+    <Property Name="ContactLBC" Type="varchar" MaxLength="10" />
+    <Property Name="ContactLDptr" Type="varchar" MaxLength="10" />
+    <Property Name="ContactDate" Type="datetime" Nullable="false" />
+    <Property Name="ContactLensRemarksId" Type="int" />
+    <Property Name="ContactLensDoctorId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblContactLensDoctors">
+    <Key>
+      <PropertyRef Name="ContactLensDoctorId" />
+    </Key>
+    <Property Name="ContactLensDoctorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactLensSerialNumber" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ContactLensOptometrist" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ContactLensOptician" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblContactLensRemarks">
+    <Key>
+      <PropertyRef Name="ContactLensRemarksId" />
+    </Key>
+    <Property Name="ContactLensRemarksId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactLensSerialNumber" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ContactLensRemarks" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblOpticalLens">
+    <Key>
+      <PropertyRef Name="OpticalId" />
+    </Key>
+    <Property Name="OpticalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SerialNumber" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="OpticalRS" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalRC" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalRA" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalRPD" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalRAdd" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalRPrism" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalRBase" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalROH" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalLS" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalLC" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalLA" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalLPD" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalLAdd" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalLPrism" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalLBase" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalLOH" Type="varchar" MaxLength="10" />
+    <Property Name="OpticalDate" Type="datetime" Nullable="false" />
+    <Property Name="OpticalLensRemarksId" Type="int" />
+    <Property Name="OpticalLensDoctorId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblOpticalLensDoctors">
+    <Key>
+      <PropertyRef Name="OpticalLensDoctorId" />
+    </Key>
+    <Property Name="OpticalLensDoctorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OpticalLensSerialNumber" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="OpticalLensOptometrist" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="OpticalLensOptician" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblOpticalLensRemarks">
+    <Key>
+      <PropertyRef Name="OpticalLensRemarksId" />
+    </Key>
+    <Property Name="OpticalLensRemarksId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OpticalLensSerialNumber" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="OpticalLensRemarks" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblPatients">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SerialNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Gender" Type="tinyint" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="Age" Type="tinyint" Nullable="false" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="50" />
+    <Property Name="TelephoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="HouseNo" Type="varchar" MaxLength="255" />
+    <Property Name="Street" Type="varchar" MaxLength="255" />
+    <Property Name="Barangay" Type="varchar" MaxLength="255" />
+    <Property Name="City" Type="varchar" MaxLength="255" />
+    <Property Name="PatientDate" Type="datetime" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsActive" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tblPatientsContactLens">
+    <Key>
+      <PropertyRef Name="PatientContactId" />
+    </Key>
+    <Property Name="PatientContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" Nullable="false" />
+    <Property Name="ContactId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblPatientsOpticalLens">
+    <Key>
+      <PropertyRef Name="PatientOpticalId" />
+    </Key>
+    <Property Name="PatientOpticalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" Nullable="false" />
+    <Property Name="OpticalId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUserAccounts">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Gender" Type="tinyint" Nullable="false" />
+    <Property Name="Position" Type="tinyint" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="255" />
+    <Property Name="isActive" Type="tinyint" />
+  </EntityType>
+  <Association Name="FK_tblContactLens_tblContactLensDoctors">
+    <End Role="tblContactLensDoctors" Type="Self.tblContactLensDoctors" Multiplicity="0..1" />
+    <End Role="tblContactLens" Type="Self.tblContactLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContactLensDoctors">
+        <PropertyRef Name="ContactLensDoctorId" />
+      </Principal>
+      <Dependent Role="tblContactLens">
+        <PropertyRef Name="ContactLensDoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblContactLens_tblContactLensRemarks">
+    <End Role="tblContactLensRemarks" Type="Self.tblContactLensRemarks" Multiplicity="0..1" />
+    <End Role="tblContactLens" Type="Self.tblContactLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContactLensRemarks">
+        <PropertyRef Name="ContactLensRemarksId" />
+      </Principal>
+      <Dependent Role="tblContactLens">
+        <PropertyRef Name="ContactLensRemarksId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOpticalLens_tblOpticalLensDoctors">
+    <End Role="tblOpticalLensDoctors" Type="Self.tblOpticalLensDoctors" Multiplicity="0..1" />
+    <End Role="tblOpticalLens" Type="Self.tblOpticalLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOpticalLensDoctors">
+        <PropertyRef Name="OpticalLensDoctorId" />
+      </Principal>
+      <Dependent Role="tblOpticalLens">
+        <PropertyRef Name="OpticalLensDoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOpticalLens_tblOpticalLensRemarks">
+    <End Role="tblOpticalLensRemarks" Type="Self.tblOpticalLensRemarks" Multiplicity="0..1" />
+    <End Role="tblOpticalLens" Type="Self.tblOpticalLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOpticalLensRemarks">
+        <PropertyRef Name="OpticalLensRemarksId" />
+      </Principal>
+      <Dependent Role="tblOpticalLens">
+        <PropertyRef Name="OpticalLensRemarksId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPatientsContactLens_tblContactLens">
+    <End Role="tblContactLens" Type="Self.tblContactLens" Multiplicity="1" />
+    <End Role="tblPatientsContactLens" Type="Self.tblPatientsContactLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblContactLens">
+        <PropertyRef Name="ContactId" />
+      </Principal>
+      <Dependent Role="tblPatientsContactLens">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPatientsContactLens_tblPatients1">
+    <End Role="tblPatients" Type="Self.tblPatients" Multiplicity="1" />
+    <End Role="tblPatientsContactLens" Type="Self.tblPatientsContactLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatients">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="tblPatientsContactLens">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPatientsOpticalLens_tblOpticalLens">
+    <End Role="tblOpticalLens" Type="Self.tblOpticalLens" Multiplicity="1" />
+    <End Role="tblPatientsOpticalLens" Type="Self.tblPatientsOpticalLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOpticalLens">
+        <PropertyRef Name="OpticalId" />
+      </Principal>
+      <Dependent Role="tblPatientsOpticalLens">
+        <PropertyRef Name="OpticalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPatientsOpticalLens_tblPatients1">
+    <End Role="tblPatients" Type="Self.tblPatients" Multiplicity="1" />
+    <End Role="tblPatientsOpticalLens" Type="Self.tblPatientsOpticalLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatients">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="tblPatientsOpticalLens">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="BackUpDatabase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DatabaseName" Type="varchar" Mode="In" />
+    <Parameter Name="FileName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="BlockUserAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="IsActive" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="CountPatientContactLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PatientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CountPatientOpticalLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PatientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Username" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetAccountsUsername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Username" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetLastCheckUpDateContactLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PatientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetLastCheckUpDateOpticalLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PatientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetPatientContactLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PatientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetPatientOpticalLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PatientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetPatients" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetPatientsId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetSerialNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetSerialNumberContactRx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetSerialNumberOpticalRx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetTodayPatients" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetTotalPatients" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetUserAccounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetUsernamePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetUserOldPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertContactLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRS" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRC" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRA" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRBC" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRDptr" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLS" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLC" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLA" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLBC" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLDptr" Type="varchar" Mode="In" />
+    <Parameter Name="ContactDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="InsertContactLensDoctors" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContactLensSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLensOptometrist" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLensOptician" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertContactLensRemarks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContactLensSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLensRemarks" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertOpticalLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRS" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRC" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRA" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRPD" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRAdd" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRPrism" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRBase" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalROH" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLS" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLC" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLA" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLPD" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLAdd" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLPrism" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLBase" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLOH" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="InsertOpticalLensDoctors" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OpticalLensSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLensOptometrist" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLensOptician" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertOpticalLensRemarks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OpticalLensSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLensRemarks" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="tinyint" Mode="In" />
+    <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+    <Parameter Name="Age" Type="tinyint" Mode="In" />
+    <Parameter Name="MobileNumber" Type="varchar" Mode="In" />
+    <Parameter Name="TelephoneNumber" Type="varchar" Mode="In" />
+    <Parameter Name="HouseNo" Type="varchar" Mode="In" />
+    <Parameter Name="Street" Type="varchar" Mode="In" />
+    <Parameter Name="Barangay" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="PatientDate" Type="datetime" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="InsertPatientsContactLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="GetPatientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertPatientsOpticalLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="GetPatientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertUserAccounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="tinyint" Mode="In" />
+    <Parameter Name="Position" Type="tinyint" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="RemovePatientInformation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PatientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SearchDatePatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SearchFullNamePatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SearchIdPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PatientId" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SearchNameRx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SearchSerialNoRx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpatePatientRemarks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OpticalLensSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLensRemarks" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdatePatientCLDoctors" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContactLensSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLensOptometrist" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLensOptician" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdatePatientContactLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRS" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRC" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRA" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRBC" Type="varchar" Mode="In" />
+    <Parameter Name="ContactRDptr" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLS" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLC" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLA" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLBC" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLDptr" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdatePatientDoctors" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OpticalLensSerailNumber" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLensOptometrist" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLensOptician" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdatePatientInformation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PatientID" Type="int" Mode="In" />
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="tinyint" Mode="In" />
+    <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+    <Parameter Name="Age" Type="tinyint" Mode="In" />
+    <Parameter Name="MobileNumber" Type="varchar" Mode="In" />
+    <Parameter Name="TelephoneNumber" Type="varchar" Mode="In" />
+    <Parameter Name="HouseNo" Type="varchar" Mode="In" />
+    <Parameter Name="Street" Type="varchar" Mode="In" />
+    <Parameter Name="Barangay" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdatePatientOpticalLens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRS" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRC" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRA" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRPD" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRAdd" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRPrism" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalRBase" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalROH" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLS" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLC" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLA" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLPD" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLAdd" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLPrism" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLBase" Type="varchar" Mode="In" />
+    <Parameter Name="OpticalLOH" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdatePatientsCLRemakrs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContactLensSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="ContactLensRemarks" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateUserAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="tinyint" Mode="In" />
+    <Parameter Name="Position" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="UpdateUserPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="MarikinaOpticalModelStoreContainer">
+    <EntitySet Name="tblContactLens" EntityType="Self.tblContactLens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblContactLensDoctors" EntityType="Self.tblContactLensDoctors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblContactLensRemarks" EntityType="Self.tblContactLensRemarks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOpticalLens" EntityType="Self.tblOpticalLens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOpticalLensDoctors" EntityType="Self.tblOpticalLensDoctors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOpticalLensRemarks" EntityType="Self.tblOpticalLensRemarks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPatients" EntityType="Self.tblPatients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPatientsContactLens" EntityType="Self.tblPatientsContactLens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPatientsOpticalLens" EntityType="Self.tblPatientsOpticalLens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserAccounts" EntityType="Self.tblUserAccounts" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblContactLens_tblContactLensDoctors" Association="Self.FK_tblContactLens_tblContactLensDoctors">
+      <End Role="tblContactLensDoctors" EntitySet="tblContactLensDoctors" />
+      <End Role="tblContactLens" EntitySet="tblContactLens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblContactLens_tblContactLensRemarks" Association="Self.FK_tblContactLens_tblContactLensRemarks">
+      <End Role="tblContactLensRemarks" EntitySet="tblContactLensRemarks" />
+      <End Role="tblContactLens" EntitySet="tblContactLens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOpticalLens_tblOpticalLensDoctors" Association="Self.FK_tblOpticalLens_tblOpticalLensDoctors">
+      <End Role="tblOpticalLensDoctors" EntitySet="tblOpticalLensDoctors" />
+      <End Role="tblOpticalLens" EntitySet="tblOpticalLens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOpticalLens_tblOpticalLensRemarks" Association="Self.FK_tblOpticalLens_tblOpticalLensRemarks">
+      <End Role="tblOpticalLensRemarks" EntitySet="tblOpticalLensRemarks" />
+      <End Role="tblOpticalLens" EntitySet="tblOpticalLens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPatientsContactLens_tblContactLens" Association="Self.FK_tblPatientsContactLens_tblContactLens">
+      <End Role="tblContactLens" EntitySet="tblContactLens" />
+      <End Role="tblPatientsContactLens" EntitySet="tblPatientsContactLens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPatientsContactLens_tblPatients1" Association="Self.FK_tblPatientsContactLens_tblPatients1">
+      <End Role="tblPatients" EntitySet="tblPatients" />
+      <End Role="tblPatientsContactLens" EntitySet="tblPatientsContactLens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPatientsOpticalLens_tblOpticalLens" Association="Self.FK_tblPatientsOpticalLens_tblOpticalLens">
+      <End Role="tblOpticalLens" EntitySet="tblOpticalLens" />
+      <End Role="tblPatientsOpticalLens" EntitySet="tblPatientsOpticalLens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPatientsOpticalLens_tblPatients1" Association="Self.FK_tblPatientsOpticalLens_tblPatients1">
+      <End Role="tblPatients" EntitySet="tblPatients" />
+      <End Role="tblPatientsOpticalLens" EntitySet="tblPatientsOpticalLens" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
