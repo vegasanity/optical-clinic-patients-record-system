@@ -21,8 +21,8 @@ It's all about optical clinic patients record:
 - Import OpticalClinicPatientsRecordSystemDB.bacpac to your Microsoft SQL Server Management Studio
 - Open the project
 - Add new item "ADO.NET Entity Data Model"
-  -- Select "EF Designer from database"
-  -- Configure your connection
+- Select "EF Designer from database"
+- Configure your connection
 - Change this line of code **MarikinaOpticalEntities dbContext = new MarikinaOpticalEntities();** to **<i>Your Entity Model Name</i> dbcontext = new <i> Your Entity Model Name</i>**
 
 ## Note
