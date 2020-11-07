@@ -23,7 +23,7 @@ It's all about optical clinic patients record:
 - Add new item "ADO.NET Entity Data Model"
 - Select "EF Designer from database"
 - Configure your connection
-- Change this line of code **MarikinaOpticalEntities dbContext = new MarikinaOpticalEntities();** to **<i>Your Entity Model Name</i> dbcontext = new <i> Your Entity Model Name</i>**
+- Change this line of code **MarikinaOpticalEntities dbContext = new MarikinaOpticalEntities();** to **<i>Your Entity Model Name</i> dbcontext = new <i> Your Entity Model Name</i>();**
 
 ## Note
 Make sure your Database version is (SQL Server 2012) and (Microsoft SQL Server Management Studio	11.0.2100.60)
