@@ -1,4 +1,4 @@
-# Optical Clinic Patients Record System
+# Optical Clinic Patients Record System (Desktop Application)
 This project was done, when I was a college student. This project, helped me, to practice my programming skills in C# and familiarization on Visual Studio. To those beginners like me, I hope this project will help you to gain great basic knowledge in C# and Visual Studio, just as it has helped me.
 
 ## Features
